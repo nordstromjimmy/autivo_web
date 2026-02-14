@@ -1,30 +1,43 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
+import { Goal, Lock, Heart, LucideIcon } from "lucide-react";
 
 export default function AboutPage() {
-  const values = [
+  type ValueItem = {
+    icon: LucideIcon | string;
+    title: string;
+    description: string;
+    color: string;
+  };
+
+  const values: ValueItem[] = [
     {
-      icon: "🎯",
+      icon: Goal,
       title: "Enkelhet",
       description:
         "Vi gör det enkelt att hålla koll på din bils underhåll och historik.",
+      color: "from-blue-500 to-blue-600",
     },
+
     {
-      icon: "🔒",
+      icon: Lock,
       title: "Integritet",
       description:
         "Din data är din. Vi lagrar säkert och delar aldrig med tredje part.",
+      color: "from-blue-500 to-blue-600",
     },
     {
-      icon: "🇸🇪",
+      icon: "SE",
       title: "Svenskt",
       description: "Byggt i Sverige, för svenska bilägare, med svensk support.",
+      color: "from-blue-500 to-blue-600",
     },
     {
-      icon: "💚",
+      icon: Heart,
       title: "Hållbarhet",
       description:
         "Bättre underhåll = längre billivslängd = mindre miljöpåverkan.",
+      color: "from-blue-500 to-blue-600",
     },
   ];
 
@@ -66,23 +79,43 @@ export default function AboutPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
-              >
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3
-                  className="text-xl font-bold mb-3 text-slate-900"
-                  style={{ fontFamily: "var(--font-display)" }}
+            {values.map((value, index) => {
+              const isTextIcon = typeof value.icon === "string";
+              const IconComponent = !isTextIcon ? value.icon : null;
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 group"
                 >
-                  {value.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
+                  {/* Icon with gradient background */}
+                  <div
+                    className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${value.color} text-white mb-5 group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    {isTextIcon ? (
+                      // Display text (like "SE")
+                      <span className="w-8 h-8 flex items-center justify-center text-2xl font-bold">
+                        {value.icon as string}
+                      </span>
+                    ) : (
+                      // Display Lucide icon
+                      IconComponent && (
+                        <IconComponent className="w-8 h-8" strokeWidth={2} />
+                      )
+                    )}
+                  </div>
+
+                  <h3
+                    className="text-xl font-bold mb-3 text-slate-900"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {value.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
