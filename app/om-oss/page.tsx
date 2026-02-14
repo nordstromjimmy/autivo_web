@@ -1,6 +1,23 @@
 import Link from "next/link";
 import Footer from "../components/Footer";
 import { Goal, Lock, Heart, LucideIcon } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Om Oss - Vår Historia & Värderingar",
+  description:
+    "Läs om Autivo, vår historia, värderingar och vårt uppdrag att förenkla bilägandet för svenska bilägare med digital servicehistorik.",
+  openGraph: {
+    title: "Om Autivo - Vår Historia & Värderingar",
+    description:
+      "Autivo startades 2026 för att ge svenska bilägare bättre kontroll över sin bils underhåll och servicehistorik.",
+    url: "https://autivo.se/om-oss",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://autivo.se/om-oss",
+  },
+};
 
 export default function AboutPage() {
   type ValueItem = {
