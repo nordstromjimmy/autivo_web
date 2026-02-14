@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     canonical: "https://autivo.se",
   },
   verification: {
-    google: "your-google-verification-code", // Add after setting up Search Console
+    google: "KUshccU65Gen0-l1DoB1VV2sR9G3dUIEHuvAdlVItgk", // Add after setting up Search Console
   },
 };
 
