@@ -74,7 +74,6 @@ export default function Hero() {
           <div
             className={`space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
-            {/* Headline */}
             <h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
