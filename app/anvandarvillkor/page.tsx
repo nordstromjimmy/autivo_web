@@ -18,12 +18,7 @@ export default function TermsPage() {
             Användarvillkor
           </h1>
           <p className="text-lg text-slate-100">
-            Senast uppdaterad:{" "}
-            {new Date().toLocaleDateString("sv-SE", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
+            Senast uppdaterad: 1 Februari 2026
           </p>
         </div>
       </section>
