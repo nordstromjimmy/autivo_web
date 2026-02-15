@@ -4,7 +4,7 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-slate-50 to-blue-50/30">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-blue-500 to-blue-600">
         <div className="max-w-4xl mx-auto px-6">
           <Link
             href="/"
@@ -12,12 +12,12 @@ export default function TermsPage() {
           ></Link>
 
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl md:text-5xl font-bold mb-4 text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Användarvillkor
           </h1>
-          <p className="text-lg text-slate-600">
+          <p className="text-lg text-slate-100">
             Senast uppdaterad:{" "}
             {new Date().toLocaleDateString("sv-SE", {
               year: "numeric",
