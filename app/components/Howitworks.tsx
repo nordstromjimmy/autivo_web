@@ -4,7 +4,7 @@ export default function HowItWorks() {
       number: "01",
       title: "Lägg till din bil",
       description:
-        "Registrera ditt fordon med registreringsnummer och få all information automatiskt.",
+        "Registrera ditt fordon med registreringsnummer och all nödvändig information.",
       icon: (
         <svg
           className="w-12 h-12"

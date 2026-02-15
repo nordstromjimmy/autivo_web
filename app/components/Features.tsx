@@ -27,7 +27,7 @@ const features = [
     icon: ChartNoAxesColumnIncreasing,
     title: "Öka återförsäljningsvärdet",
     description:
-      "Komplett verifierad historik ökar din bils värde med upp till 15% vid försäljning.",
+      "Komplett verifierad historik ökar din bils värde vid försäljning.",
     color: "from-blue-500 to-blue-600",
   },
   {
