@@ -141,16 +141,6 @@ export default function HowItWorks() {
             </div>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <a
-            href="#waitlist"
-            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105"
-          >
-            Kom igång idag
-          </a>
-        </div>
       </div>
     </section>
   );

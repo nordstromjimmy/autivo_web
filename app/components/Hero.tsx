@@ -40,16 +40,6 @@ export default function Hero() {
     };
   }, [showModal]);
 
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % screenshots.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage(
-      (prev) => (prev - 1 + screenshots.length) % screenshots.length,
-    );
-  };
-
   const goToImage = (index: number) => {
     setCurrentImage(index);
   };
@@ -111,57 +101,59 @@ export default function Hero() {
           <div
             className={`relative transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
-            <div className="relative">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-[3rem] blur-3xl opacity-20" />
+            <div className="max-w-sm mx-auto lg:max-w-xs xl:max-w-sm">
+              <div className="relative">
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-[3rem] blur-3xl opacity-20" />
 
-              {/* Phone frame */}
-              <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
-                <div className="bg-white rounded-[2.5rem] overflow-hidden">
-                  {/* Notch */}
-                  <div className="h-6 bg-white relative z-10">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl" />
-                  </div>
-                  {/* Carousel container */}
-                  <div className="relative aspect-[9/19.5] bg-white overflow-hidden">
-                    {/* Screenshot images */}
-                    <div className="relative w-full h-full">
-                      {screenshots.map((screenshot, index) => (
-                        <div
-                          key={index}
-                          className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                            index === currentImage
-                              ? "opacity-100 translate-x-0"
-                              : index < currentImage
-                                ? "opacity-0 -translate-x-full"
-                                : "opacity-0 translate-x-full"
-                          }`}
-                        >
-                          <Image
-                            src={screenshot}
-                            alt={`Autivo app screenshot ${index + 1}`}
-                            fill
-                            className="object-cover"
-                            priority={index === 0}
-                          />
-                        </div>
-                      ))}
+                {/* Phone frame */}
+                <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
+                  <div className="bg-white rounded-[2.5rem] overflow-hidden">
+                    {/* Notch */}
+                    <div className="h-6 bg-white relative z-10">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl" />
                     </div>
+                    {/* Carousel container */}
+                    <div className="relative aspect-[9/19.5] bg-white overflow-hidden">
+                      {/* Screenshot images */}
+                      <div className="relative w-full h-full">
+                        {screenshots.map((screenshot, index) => (
+                          <div
+                            key={index}
+                            className={`absolute inset-0 transition-all duration-500 ease-in-out ${
+                              index === currentImage
+                                ? "opacity-100 translate-x-0"
+                                : index < currentImage
+                                  ? "opacity-0 -translate-x-full"
+                                  : "opacity-0 translate-x-full"
+                            }`}
+                          >
+                            <Image
+                              src={screenshot}
+                              alt={`Autivo app screenshot ${index + 1}`}
+                              fill
+                              className="object-cover"
+                              priority={index === 0}
+                            />
+                          </div>
+                        ))}
+                      </div>
 
-                    {/* Dot indicators */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                      {screenshots.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => goToImage(index)}
-                          className={`transition-all ${
-                            index === currentImage
-                              ? "w-6 h-2 bg-blue-500"
-                              : "w-2 h-2 bg-white/50 hover:bg-white/80"
-                          } rounded-full`}
-                          aria-label={`Go to screenshot ${index + 1}`}
-                        />
-                      ))}
+                      {/* Dot indicators */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        {screenshots.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => goToImage(index)}
+                            className={`transition-all ${
+                              index === currentImage
+                                ? "w-6 h-2 bg-blue-500"
+                                : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                            } rounded-full`}
+                            aria-label={`Go to screenshot ${index + 1}`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -288,23 +280,6 @@ export default function Hero() {
           </div>
         </div>
       )}
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <svg
-          className="w-6 h-6 text-slate-400"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </div>
     </section>
   );
 }
