@@ -57,7 +57,6 @@ export default function CTA() {
       className="py-24 md:py-32 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 relative overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem]" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl opacity-20" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-700 rounded-full blur-3xl opacity-20" />
 
