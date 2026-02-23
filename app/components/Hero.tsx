@@ -111,8 +111,8 @@ export default function Hero() {
                 <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
                   <div className="bg-white rounded-[2.5rem] overflow-hidden">
                     {/* Notch */}
-                    <div className="h-6 bg-black relative z-10">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl" />
+                    <div className="h-6 bg-gradient-to-br from-slate-900 to-slate-900 relative z-10">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gradient-to-br from-slate-900 to-slate-900 rounded-b-2xl" />
                     </div>
                     {/* Carousel container */}
                     <div className="relative aspect-[9/19.5] bg-black overflow-hidden">
