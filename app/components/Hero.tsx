@@ -111,11 +111,11 @@ export default function Hero() {
                 <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
                   <div className="bg-white rounded-[2.5rem] overflow-hidden">
                     {/* Notch */}
-                    <div className="h-6 bg-white relative z-10">
+                    <div className="h-6 bg-black relative z-10">
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-900 rounded-b-2xl" />
                     </div>
                     {/* Carousel container */}
-                    <div className="relative aspect-[9/19.5] bg-white overflow-hidden">
+                    <div className="relative aspect-[9/19.5] bg-black overflow-hidden">
                       {/* Screenshot images */}
                       <div className="relative w-full h-full">
                         {screenshots.map((screenshot, index) => (
@@ -141,7 +141,7 @@ export default function Hero() {
                       </div>
 
                       {/* Dot indicators */}
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                      {/*                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                         {screenshots.map((_, index) => (
                           <button
                             key={index}
@@ -154,7 +154,7 @@ export default function Hero() {
                             aria-label={`Go to screenshot ${index + 1}`}
                           />
                         ))}
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
