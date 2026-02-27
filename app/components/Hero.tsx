@@ -8,7 +8,6 @@ export default function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-  // Your screenshot paths - update these with your actual image paths
   const screenshots = [
     "/screenshots/screenshot1.png",
     "/screenshots/screenshot2.png",
@@ -20,7 +19,6 @@ export default function Hero() {
     setIsVisible(true);
   }, []);
 
-  // Auto-advance carousel every 4 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % screenshots.length);
@@ -29,7 +27,6 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [screenshots.length]);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = "hidden";
@@ -65,6 +62,28 @@ export default function Hero() {
           <div
             className={`space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
+            {/* Logo: Image "A" + Text "utivo" = "Autivo" */}
+            <div className="flex items-center gap-1 mb-6">
+              {/* Logo Image (A with car) */}
+              <Image
+                src="/weblogo2.png"
+                alt="Autivo"
+                width={80}
+                height={80}
+                className="w-16 h-16 sm:w-20 sm:h-20 md:w-36 md:h-36"
+                priority
+              />
+
+              {/* Text "utivo" */}
+              {/*               <span
+                className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                utivo.se
+              </span> */}
+            </div>
+
+            {/* Headline */}
             <h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
@@ -108,11 +127,11 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-[3rem] blur-3xl opacity-20" />
 
                 {/* Phone frame */}
-                <div className="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
+                <div className="relative bg-neutral-800 rounded-[3rem] p-3 shadow-2xl">
                   <div className="bg-white rounded-[2.5rem] overflow-hidden">
                     {/* Notch */}
-                    <div className="h-6 bg-gradient-to-br from-slate-900 to-slate-900 relative z-10">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gradient-to-br from-slate-900 to-slate-900 rounded-b-2xl" />
+                    <div className="h-6 bg-neutral-900 relative z-10">
+                      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-slate-800 rounded-b-2xl" /> */}
                     </div>
                     {/* Carousel container */}
                     <div className="relative aspect-[9/19.5] bg-black overflow-hidden">
@@ -139,22 +158,6 @@ export default function Hero() {
                           </div>
                         ))}
                       </div>
-
-                      {/* Dot indicators */}
-                      {/*                       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                        {screenshots.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => goToImage(index)}
-                            className={`transition-all ${
-                              index === currentImage
-                                ? "w-6 h-2 bg-blue-500"
-                                : "w-2 h-2 bg-white/50 hover:bg-white/80"
-                            } rounded-full`}
-                            aria-label={`Go to screenshot ${index + 1}`}
-                          />
-                        ))}
-                      </div> */}
                     </div>
                   </div>
                 </div>
