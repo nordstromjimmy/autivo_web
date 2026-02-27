@@ -62,27 +62,6 @@ export default function Hero() {
           <div
             className={`space-y-8 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
-            {/* Logo: Image "A" + Text "utivo" = "Autivo" */}
-            <div className="flex items-center gap-1 mb-6">
-              {/* Logo Image (A with car) */}
-              <Image
-                src="/weblogo12.png"
-                alt="Autivo"
-                width={80}
-                height={80}
-                className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24"
-                priority
-              />
-
-              {/* Text "utivo" */}
-              {/*               <span
-                className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                utivo.se
-              </span> */}
-            </div>
-
             {/* Headline */}
             <h1
               className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"

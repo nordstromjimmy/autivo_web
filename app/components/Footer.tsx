@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Footer() {
@@ -14,14 +15,23 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
+            {/* Logo: Image "A" + Text "utivo" = "Autivo" */}
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-xl">
-                A
-              </div>
+              {/* Logo Image (A with car) */}
+              <Image
+                src="/weblogo4.png"
+                alt="Autivo"
+                width={40}
+                height={40}
+                className="w-11 h-11"
+              />
+
+              {/* Text "utivo" */}
               <span className="text-2xl font-display font-bold text-white">
                 Autivo
               </span>
             </div>
+
             <p className="text-slate-400 mb-6 max-w-sm">
               Din bils digitala historia. Håll koll på service, besiktning och
               historik – allt på ett ställe.
