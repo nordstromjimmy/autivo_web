@@ -42,11 +42,10 @@ export default function PrivacyPage() {
               1. Allmän information
             </h2>
             <p className="text-slate-600 mb-6">
-              Denna integritetspolicy beskriver hur Autivo ("vi", "oss", "vår")
-              samlar in, använder och skyddar dina personuppgifter när du
-              använder vår mobilapplikation. Genom att använda Autivo godkänner
-              du insamling och användning av information i enlighet med denna
-              policy.
+              Denna integritetspolicy beskriver hur Autivo samlar in, använder
+              och skyddar dina personuppgifter när du använder vår
+              mobilapplikation. Genom att använda Autivo godkänner du insamling
+              och användning av information i enlighet med denna policy.
             </p>
 
             <h2
