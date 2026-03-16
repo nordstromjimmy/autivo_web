@@ -122,12 +122,7 @@ export default function TermsPage() {
               grundläggande funktioner.
             </p>
             <p className="text-slate-600 mb-3">
-              <strong>Premium:</strong> Prenumeration debiteras månadsvis eller
-              årligen. Automatisk förnyelse såvida du inte säger upp
-              prenumerationen minst 24 timmar före förnyelse.
-            </p>
-            <p className="text-slate-600 mb-6">
-              Återbetalning sker inte för outnyttjad tid vid uppsägning.
+              <strong>Premium:</strong> Premium köps i appen.
             </p>
 
             <h2
@@ -178,24 +173,11 @@ export default function TermsPage() {
               meddelas via e-post eller i appen minst 30 dagar i förväg.
               Fortsatt användning efter ändringar innebär acceptans.
             </p>
-
             <h2
               className="text-2xl font-bold mb-4 mt-8"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              10. Tvistlösning
-            </h2>
-            <p className="text-slate-600 mb-6">
-              Dessa villkor regleras av svensk lag. Eventuella tvister ska i
-              första hand lösas genom dialog. Om ingen lösning nås ska tvisten
-              avgöras av svensk domstol.
-            </p>
-
-            <h2
-              className="text-2xl font-bold mb-4 mt-8"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              11. Kontakt
+              10. Kontakt
             </h2>
             <p className="text-slate-600 mb-6">
               Frågor om användarvillkoren? Kontakta oss:

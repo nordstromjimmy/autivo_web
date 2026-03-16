@@ -375,21 +375,7 @@ export default function PrivacyPage() {
               className="text-2xl font-bold mb-4 mt-8"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              10. Barn
-            </h2>
-            <p className="text-slate-600 mb-6">
-              Autivo är inte avsedd för barn under 13 år. Vi samlar inte
-              medvetet in personuppgifter från barn under 13 år. Om du är
-              förälder eller vårdnadshavare och upptäcker att ditt barn har
-              tillhandahållit oss personuppgifter, kontakta oss så raderar vi
-              informationen.
-            </p>
-
-            <h2
-              className="text-2xl font-bold mb-4 mt-8"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              11. Cookies och spårning
+              10. Cookies och spårning
             </h2>
             <p className="text-slate-600 mb-6">
               Autivo-appen använder inte cookies eller spårningsteknologier för
@@ -401,7 +387,7 @@ export default function PrivacyPage() {
               className="text-2xl font-bold mb-4 mt-8"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              12. Internationell dataöverföring
+              11. Internationell dataöverföring
             </h2>
             <p className="text-slate-600 mb-6">
               Dina uppgifter lagras primärt inom EU genom vår leverantör
@@ -413,7 +399,7 @@ export default function PrivacyPage() {
               className="text-2xl font-bold mb-4 mt-8"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              13. Ändringar i integritetspolicyn
+              12. Ändringar i integritetspolicyn
             </h2>
             <p className="text-slate-600 mb-3">
               Vi kan uppdatera denna integritetspolicy från tid till annan. Vi
@@ -433,7 +419,7 @@ export default function PrivacyPage() {
               className="text-2xl font-bold mb-4 mt-8"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              14. Kontakt
+              13. Kontakt
             </h2>
             <p className="text-slate-600 mb-3">
               Om du har frågor om denna integritetspolicy eller hur vi hanterar
@@ -459,38 +445,6 @@ export default function PrivacyPage() {
                 </a>
               </li>
             </ul>
-
-            <h2
-              className="text-2xl font-bold mb-4 mt-8"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              15. Tillsynsmyndighet
-            </h2>
-            <p className="text-slate-600 mb-3">
-              Om du anser att dina rättigheter enligt GDPR har kränkts har du
-              rätt att lämna in ett klagomål till Integritetsskyddsmyndigheten
-              (IMY):
-            </p>
-            <ul className="list-disc pl-6 text-slate-600 space-y-2 mb-6">
-              <li>
-                <strong>Webb:</strong>{" "}
-                <a
-                  href="https://www.imy.se"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700"
-                >
-                  https://www.imy.se
-                </a>
-              </li>
-              <li>
-                <strong>E-post:</strong> imy@imy.se
-              </li>
-              <li>
-                <strong>Telefon:</strong> 08-657 61 00
-              </li>
-            </ul>
-
             <hr className="my-12 border-slate-200" />
 
             <p className="text-center text-slate-500 text-sm">

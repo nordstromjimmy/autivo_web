@@ -33,8 +33,7 @@ const features = [
   {
     icon: Bell,
     title: "Smarta påminnelser",
-    description:
-      "Få notiser om kommande besiktning, serviceintervall och säsongsbyten.",
+    description: "Få notiser om kommande besiktningar och serviceintervaller",
     color: "from-blue-500 to-blue-600",
   },
   {
