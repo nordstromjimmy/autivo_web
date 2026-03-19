@@ -116,6 +116,12 @@ export default function Footer() {
                   Kontakt
                 </Link>
               </li>
+              <Link
+                href="/blogg"
+                className="text-white font-display font-bold mb-4"
+              >
+                Blogg
+              </Link>
             </ul>
           </div>
         </div>

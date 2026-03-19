@@ -8,6 +8,36 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog Index -->
+  <url>
+    <loc>https://autivo.se/blogg</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+ 
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://autivo.se/blogg/mina-fordon-alternativ</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+ 
+  <url>
+    <loc>https://autivo.se/blogg/besiktningschecklista-2026</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+ 
+  <url>
+    <loc>https://autivo.se/blogg/servicehistorik-viktig</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- About Page -->
   <url>
     <loc>https://autivo.se/om-oss</loc>
