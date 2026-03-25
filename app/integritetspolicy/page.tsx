@@ -163,7 +163,7 @@ export default function PrivacyPage() {
             </p>
             <p className="text-slate-600 mb-2">
               <strong>När:</strong> Endast när du aktivt väljer att ta ett foto
-              för verifiering.
+              för verifiering eller sparande av kvitton.
             </p>
             <p className="text-slate-600 mb-6">
               <strong>Lagring:</strong> Foton bearbetas lokalt på din enhet. De

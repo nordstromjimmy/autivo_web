@@ -5,8 +5,6 @@ export default function MinaFordonContent() {
       <p className="text-xl text-slate-600 leading-relaxed mb-8">
         Om du använder Mina Fordon för att hålla koll på din bils historik har
         vi dåliga nyheter: tjänsten stängs ner under 2025. Men det finns hopp!
-        Vi har samlat de bästa alternativen för att ersätta Mina Fordon och ge
-        dig ännu bättre funktioner.
       </p>
 
       {/* Section 1 */}
@@ -14,12 +12,12 @@ export default function MinaFordonContent() {
         className="text-3xl md:text-4xl font-bold mt-12 mb-6 text-slate-900"
         style={{ fontFamily: "var(--font-display)" }}
       >
-        Vad händer med Mina Fordon?
+        Vad hände med Mina Fordon?
       </h2>
       <p className="text-slate-600 leading-relaxed mb-6">
         Transportstyrelsen har beslutat att stänga ner sin tjänst Mina Fordon
-        under 2025. Detta innebär att miljontals svenska bilägare behöver hitta
-        ett nytt sätt att hålla koll på sin servicehistorik, besiktningar och
+        under 2025. Detta motiverade mig att starta Autivo som ett nytt sätt
+        hjälper bilägare att hålla koll på sin servicehistorik, besiktningar och
         fordonsuppgifter.
       </p>
 
@@ -203,12 +201,12 @@ export default function MinaFordonContent() {
               className="text-xl font-bold text-blue-900 mb-2"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              💡 Rekommendation från Autivo
+              💡 Vem passar Autivo för?
             </h3>
             <p className="text-blue-800 leading-relaxed">
-              Autivo lanseras Q2 2026 och erbjuder alla funktioner du saknar
-              från Mina Fordon - plus mycket mer. Gå med i väntelistan för tidig
-              tillgång och specialerbjudanden till de första användarna!
+              Autivo lanseras Q2 2026 och erbjuder flera funktioner som att
+              spara servicekvitton, få påminnelser och ha en digital servicebok
+              - plus mycket mer. Gå med i väntelistan för tidig tillgång!
             </p>
           </div>
         </div>
@@ -236,7 +234,6 @@ export default function MinaFordonContent() {
         <p className="text-green-800">
           Autivo är det bästa alternativet för svenska bilägare som vill ha en
           modern, pålitlig och lättanvänd lösning för att ersätta Mina Fordon.
-          Appen lanseras snart - gå med i väntelistan redan idag!
         </p>
       </div>
     </div>
