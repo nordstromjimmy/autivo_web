@@ -16,7 +16,7 @@ export default function MinaFordonContent() {
       </h2>
       <p className="text-slate-600 leading-relaxed mb-6">
         Transportstyrelsen har beslutat att stänga ner sin tjänst Mina Fordon
-        under 2025. Detta motiverade mig att starta Autivo som ett nytt sätt
+        under 2025. Detta motiverade mig att starta Autivo som på ett nytt sätt
         hjälper bilägare att hålla koll på sin servicehistorik, besiktningar och
         fordonsuppgifter.
       </p>
