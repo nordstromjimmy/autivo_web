@@ -20,7 +20,6 @@ export default function HowItWorks() {
           />
         </svg>
       ),
-      color: "from-blue-500 to-cyan-500",
     },
     {
       number: "02",
@@ -48,7 +47,6 @@ export default function HowItWorks() {
           />
         </svg>
       ),
-      color: "from-blue-500 to-cyan-500",
     },
     {
       number: "03",
@@ -70,7 +68,6 @@ export default function HowItWorks() {
           />
         </svg>
       ),
-      color: "from-blue-500 to-cyan-500",
     },
     {
       number: "04",
@@ -92,7 +89,6 @@ export default function HowItWorks() {
           />
         </svg>
       ),
-      color: "from-blue-500 to-cyan-500",
     },
   ];
 
@@ -140,17 +136,12 @@ export default function HowItWorks() {
               <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-slate-100 hover:border-slate-200 h-full hover:-translate-y-2">
                 {/* Gradient glow on hover */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}
-                />
-
-                {/* Decorative corner */}
-                <div
-                  className={`absolute -top-1 -right-1 w-20 h-20 bg-gradient-to-br ${step.color} opacity-10 rounded-br-3xl rounded-tl-3xl`}
+                  className={`absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}
                 />
 
                 {/* Number badge */}
                 <div
-                  className={`absolute top-4 right-4 w-10 h-10 bg-gradient-to-br ${step.color} rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-xl transition-all duration-300 group-hover:scale-110`}
+                  className={`absolute top-4 right-4 w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-xl transition-all duration-300 group-hover:scale-110`}
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {step.number}
@@ -158,7 +149,7 @@ export default function HowItWorks() {
 
                 {/* Icon */}
                 <div
-                  className={`text-white mb-6 mt-12 inline-flex p-4 rounded-2xl bg-gradient-to-br ${step.color} shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}
+                  className={`text-white mb-6 mt-12 inline-flex p-4 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}
                 >
                   {step.icon}
                 </div>
@@ -170,22 +161,6 @@ export default function HowItWorks() {
                 <p className="text-slate-700 leading-relaxed">
                   {step.description}
                 </p>
-
-                {/* Step indicator */}
-                <div className="mt-6 flex items-center gap-2">
-                  <div className="flex gap-1">
-                    {[...Array(4)].map((_, i) => (
-                      <div
-                        key={i}
-                        className={`h-1 rounded-full transition-all duration-300 ${
-                          i <= index
-                            ? `w-8 bg-gradient-to-r ${step.color}`
-                            : "w-4 bg-slate-200"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           ))}
