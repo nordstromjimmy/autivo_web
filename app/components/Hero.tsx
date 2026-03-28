@@ -14,6 +14,7 @@ export default function Hero() {
     "/screenshots/screenshot3.jpg",
     "/screenshots/screenshot4.jpg",
     "/screenshots/screenshot5.jpg",
+    "/screenshots/screenshot6.jpg",
   ];
 
   useEffect(() => {
