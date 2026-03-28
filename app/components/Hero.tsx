@@ -115,6 +115,7 @@ export default function Hero() {
                     </div>
                     {/* Carousel container */}
                     <div className="relative aspect-[9/19.5] bg-black overflow-hidden">
+                      {/* Screenshot images */}
                       <div className="relative w-full h-full">
                         {screenshots.map((screenshot, index) => (
                           <div
@@ -127,17 +128,13 @@ export default function Hero() {
                                   : "opacity-0 translate-x-full"
                             }`}
                           >
-                            <div className="relative w-full h-full p-2 md:p-3">
-                              <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
-                                <Image
-                                  src={screenshot}
-                                  alt={`Autivo app screenshot ${index + 1}`}
-                                  fill
-                                  className="object-contain"
-                                  priority={index === 0}
-                                />
-                              </div>
-                            </div>
+                            <Image
+                              src={screenshot}
+                              alt={`Autivo app screenshot ${index + 1}`}
+                              fill
+                              className="object-cover rounded-[1.5rem]"
+                              priority={index === 0}
+                            />
                           </div>
                         ))}
                       </div>
