@@ -20,6 +20,7 @@ export default function HowItWorks() {
           />
         </svg>
       ),
+      color: "from-blue-500 to-cyan-500",
     },
     {
       number: "02",
@@ -47,6 +48,7 @@ export default function HowItWorks() {
           />
         </svg>
       ),
+      color: "from-blue-500 to-cyan-500",
     },
     {
       number: "03",
@@ -68,6 +70,7 @@ export default function HowItWorks() {
           />
         </svg>
       ),
+      color: "from-blue-500 to-cyan-500",
     },
     {
       number: "04",
@@ -89,51 +92,100 @@ export default function HowItWorks() {
           />
         </svg>
       ),
+      color: "from-blue-500 to-cyan-500",
     },
   ];
 
   return (
     <section
       id="how-it-works"
-      className="py-24 md:py-32 bg-gradient-to-br from-slate-50 to-blue-50/30 relative overflow-hidden"
+      className="py-24 md:py-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-cyan-50/20 relative overflow-hidden"
     >
+      {/* Decorative background elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl" />
+
+      {/* Dotted pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #3b82f6 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
+
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
             Så <span className="text-gradient">enkelt är det</span>
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-700 leading-relaxed">
             Fyra steg från registrering till professionell servicehistorik
           </p>
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              {/* Connector line (hidden on last item) */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-20 left-[60%] w-full h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent" />
-              )}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {/* Connector line for desktop */}
+          <div className="hidden lg:block absolute top-28 left-[12.5%] right-[12.5%] h-1">
+            <div className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 opacity-20 rounded-full" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 opacity-40 blur-sm rounded-full" />
+          </div>
 
+          {steps.map((step, index) => (
+            <div key={index} className="relative group">
               {/* Step card */}
-              <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-slate-100">
+              <div className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-slate-100 hover:border-slate-200 h-full hover:-translate-y-2">
+                {/* Gradient glow on hover */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}
+                />
+
+                {/* Decorative corner */}
+                <div
+                  className={`absolute -top-1 -right-1 w-20 h-20 bg-gradient-to-br ${step.color} opacity-10 rounded-br-3xl rounded-tl-3xl`}
+                />
+
                 {/* Number badge */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                <div
+                  className={`absolute top-4 right-4 w-10 h-10 bg-gradient-to-br ${step.color} rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-xl transition-all duration-300 group-hover:scale-110`}
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   {step.number}
                 </div>
 
                 {/* Icon */}
-                <div className="text-blue-500 mb-6 mt-4">{step.icon}</div>
+                <div
+                  className={`text-white mb-6 mt-12 inline-flex p-4 rounded-2xl bg-gradient-to-br ${step.color} shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}
+                >
+                  {step.icon}
+                </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-display font-bold mb-3 text-slate-900">
+                <h3 className="text-2xl font-display font-bold mb-4 text-slate-900">
                   {step.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-slate-700 leading-relaxed">
                   {step.description}
                 </p>
+
+                {/* Step indicator */}
+                <div className="mt-6 flex items-center gap-2">
+                  <div className="flex gap-1">
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`h-1 rounded-full transition-all duration-300 ${
+                          i <= index
+                            ? `w-8 bg-gradient-to-r ${step.color}`
+                            : "w-4 bg-slate-200"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}

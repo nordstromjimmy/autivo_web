@@ -71,7 +71,7 @@ export default function Hero() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-xl">
+            <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-xl">
               Håll koll på service, förbered besiktning och dokumentera varje
               mil. Öka din bils värde med verifierad servicehistorik.
             </p>
