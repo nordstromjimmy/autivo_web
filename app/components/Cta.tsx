@@ -81,7 +81,7 @@ export default function CTA() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="epost@example.com"
+              placeholder="namn@exempel.se"
               required
               disabled={loading || submitted}
               className="flex-1 px-6 py-4 rounded-xl bg-white/95 backdrop-blur text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-white/50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"

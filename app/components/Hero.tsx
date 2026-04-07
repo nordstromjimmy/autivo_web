@@ -151,7 +151,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Coming Soon Modal */}
+      {/* Download App Modal - Using Your Blue Colors */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
           {/* Backdrop */}
@@ -195,7 +195,7 @@ export default function Hero() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
                 />
               </svg>
             </div>
@@ -205,64 +205,95 @@ export default function Hero() {
               className="text-2xl md:text-3xl font-bold text-center mb-3"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Kommer snart!
+              Ladda ner Autivo
             </h3>
 
-            <p className="text-slate-600 text-center mb-6">
-              Autivo är under utveckling och lanseras inom kort. Gå med i
-              väntelistan så får du veta när appen är redo att ladda ner!
+            <p className="text-slate-600 text-center mb-8">
+              Börja dokumentera din servicehistorik idag!
             </p>
 
-            {/* Launch estimate */}
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 mb-6 border border-blue-100">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">🚀</span>
+            {/* Download Buttons */}
+            <div className="space-y-3 mb-6">
+              {/* Android - Available NOW - Using Blue Gradient */}
+              <a
+                href="https://play.google.com/store/apps/details?id=se.autivo.app&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 group cursor-pointer"
+              >
+                <div className="w-12 h-12 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Image
+                    src="/weblogo4.png"
+                    alt="Autivo"
+                    width={40}
+                    height={40}
+                    className="w-11 h-11"
+                  />
                 </div>
-                <div>
-                  <p className="text-sm text-slate-600">Planerad lansering</p>
-                  <p className="font-semibold text-slate-900">Q2 2026</p>
+                <div className="flex-1 text-left">
+                  <p className="font-bold text-lg">Ladda ner för Android</p>
+                  <p className="text-sm text-white/90">
+                    Tillgänglig nu på Google Play
+                  </p>
                 </div>
+                <svg
+                  className="w-6 h-6 text-white/80 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </a>
+
+              {/* iOS - Coming Soon */}
+              <div className="flex items-center gap-4 p-4 bg-slate-100 text-slate-500 rounded-xl border-2 border-slate-200">
+                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center flex-shrink-0">
+                  <svg
+                    className="w-7 h-7 text-slate-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                  </svg>
+                </div>
+                <div className="flex-1 text-left">
+                  <p className="font-bold text-lg text-slate-700">
+                    iOS - Kommer snart
+                  </p>
+                  <p className="text-sm">Planerad lansering Q2 2026</p>
+                </div>
+                <svg
+                  className="w-6 h-6 text-slate-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                  />
+                </svg>
               </div>
             </div>
 
-            {/* Platforms */}
-            <div className="flex items-center justify-center gap-4 mb-6 pb-6 border-b border-slate-200">
-              <div className="flex items-center gap-2 text-slate-600">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                </svg>
-                <span className="text-sm font-medium">iOS</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-600">
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M17.523 15.3414c-.5511-.8484-1.6102-1.4051-2.6619-1.4051s-2.1108.5567-2.6619 1.4051c-.5511.8485-.5511 1.8933 0 2.7417.5511.8485 1.6102 1.4051 2.6619 1.4051s2.1108-.5566 2.6619-1.4051c.5511-.8484.5511-1.8932 0-2.7417M12.0005 0L1.6907 6v12l10.3098 6 10.3096-6V6M17.6604 18.6543c-.8654 1.3313-2.5313 2.1186-4.299 2.1186-1.7677 0-3.4336-.7873-4.299-2.1186-.8654-1.3314-.8654-2.9729 0-4.3043.8654-1.3313 2.5313-2.1186 4.299-2.1186 1.7677 0 3.4336.7873 4.299 2.1186.8654 1.3314.8654 2.9729 0 4.3043" />
-                </svg>
-                <span className="text-sm font-medium">Android</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="space-y-3">
+            {/* iOS Waitlist CTA */}
+            <div className="text-center pt-4 border-t border-slate-200">
+              <p className="text-sm text-slate-600 mb-3">
+                Vill du veta när iOS-versionen släpps?
+              </p>
               <button
                 onClick={scrollToWaitlist}
                 className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 cursor-pointer"
               >
                 Gå med i väntelistan
-              </button>
-              <button
-                onClick={() => setShowModal(false)}
-                className="w-full px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200 transition-colors cursor-pointer"
-              >
-                Stäng
               </button>
             </div>
           </div>
