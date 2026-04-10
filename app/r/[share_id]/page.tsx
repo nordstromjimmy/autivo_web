@@ -70,9 +70,10 @@ async function getReport(shareId: string): Promise<PublicReport | null> {
 export async function generateMetadata({
   params,
 }: {
-  params: { share_id: string };
+  params: Promise<{ share_id: string }>;
 }): Promise<Metadata> {
-  const report = await getReport(params.share_id);
+  const { share_id } = await params;
+  const report = await getReport(share_id);
 
   if (!report) {
     return { title: "Rapport hittades inte | Autivo" };
@@ -117,9 +118,10 @@ function formatMileage(mileage?: number): string {
 export default async function ShareReportPage({
   params,
 }: {
-  params: { share_id: string };
+  params: Promise<{ share_id: string }>;
 }) {
-  const report = await getReport(params.share_id);
+  const { share_id } = await params;
+  const report = await getReport(share_id);
 
   if (!report) {
     return <ExpiredOrNotFound />;
@@ -132,32 +134,40 @@ export default async function ShareReportPage({
     <main className="min-h-screen bg-slate-50">
       {/* ── Blue gradient header ── */}
       <div className="bg-gradient-to-br from-blue-500 to-cyan-500 text-white">
-        <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+        <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
           {/* Branding */}
-          <div className="flex items-center gap-2 mb-10 opacity-75">
-            <span className="text-sm font-bold tracking-widest uppercase">
-              Autivo
-            </span>
-            <span className="text-white/40">·</span>
-            <span className="text-sm">Fullständig Fordonshistorik</span>
+          <Image
+            src="/weblogo4.png"
+            alt="Autivo"
+            width={140}
+            height={140}
+            className="rounded-xl mb-2"
+          />
+          <div className="flex items-center gap-2 opacity-90 mb-12">
+            <a
+              href="https://autivo.se/"
+              className="text-4xl md:text-5xl font-bold tracking-widest uppercase"
+            >
+              Autivo.se
+            </a>
           </div>
 
           {/* Vehicle identity */}
           <h1
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-2"
+            className="text-5xl md:text-8xl font-bold tracking-tight mb-3 break-words"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {vehicle.registration_number}
           </h1>
-          <p className="text-xl md:text-2xl text-white/85">
+          <p className="text-xl md:text-3xl text-white/85 mb-6">
             {vehicle.make} {vehicle.model} {vehicle.year}
           </p>
 
           {/* Verified badge */}
           {vehicle.is_verified && (
-            <div className="mt-4 inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-1.5">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-1.5 mb-2">
               <svg
-                className="w-4 h-4"
+                className="w-4 h-4 flex-shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -176,7 +186,7 @@ export default async function ShareReportPage({
           )}
 
           {/* Stats */}
-          <div className="mt-8 flex gap-8 flex-wrap">
+          <div className="mt-8 flex gap-6 md:gap-10 flex-wrap">
             <Stat label="Serviceposter" value={`${records.length} st`} />
             {totalCost > 0 && (
               <Stat label="Total kostnad" value={formatCost(totalCost)} />
@@ -192,9 +202,9 @@ export default async function ShareReportPage({
       </div>
 
       {/* ── Content ── */}
-      <div className="max-w-3xl mx-auto px-6 py-10 space-y-6">
+      <div className="max-w-3xl mx-auto px-4 md:px-6 py-8 md:py-10 space-y-4 md:space-y-6">
         {/* Vehicle details */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+        <div className="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-slate-100">
           <h2 className="text-base font-bold text-slate-900 mb-4">
             Fordonsuppgifter
           </h2>
@@ -232,7 +242,7 @@ export default async function ShareReportPage({
 
         {/* Service history */}
         {records.length > 0 && (
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-slate-100">
             <h2 className="text-base font-bold text-slate-900 mb-4">
               Servicehistorik{" "}
               <span className="font-normal text-slate-400 text-sm">
@@ -244,10 +254,10 @@ export default async function ShareReportPage({
               {records.map((record, index) => (
                 <div
                   key={index}
-                  className="flex gap-4 py-3 first:pt-0 last:pb-0"
+                  className="flex gap-3 md:gap-4 py-3 first:pt-0 last:pb-0"
                 >
-                  {/* Date */}
-                  <div className="w-14 flex-shrink-0">
+                  {/* Date — hidden on very small screens, shown from xs up */}
+                  <div className="w-12 md:w-14 flex-shrink-0">
                     <p className="text-xs font-medium text-slate-500">
                       {new Date(record.date).toLocaleDateString("sv-SE", {
                         day: "numeric",
@@ -262,16 +272,16 @@ export default async function ShareReportPage({
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-0.5">
-                      <span className="text-xs font-medium text-blue-600 bg-blue-50 rounded-full px-2 py-0.5">
+                      <span className="text-xs font-medium text-blue-600 bg-blue-50 rounded-full px-2 py-0.5 whitespace-nowrap">
                         {record.type}
                       </span>
                       {record.location && (
-                        <span className="text-xs text-slate-400">
+                        <span className="text-xs text-slate-400 truncate">
                           {record.location}
                         </span>
                       )}
                     </div>
-                    <p className="text-sm font-medium text-slate-800">
+                    <p className="text-sm font-medium text-slate-800 break-words">
                       {record.description}
                     </p>
                     {record.mileage && (
@@ -284,7 +294,7 @@ export default async function ShareReportPage({
                   {/* Cost */}
                   {record.cost != null && (
                     <div className="flex-shrink-0 text-right">
-                      <p className="text-sm font-semibold text-slate-800">
+                      <p className="text-sm font-semibold text-slate-800 whitespace-nowrap">
                         {formatCost(record.cost)}
                       </p>
                     </div>
@@ -307,7 +317,7 @@ export default async function ShareReportPage({
 
         {/* Receipts */}
         {receipts.length > 0 && (
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+          <div className="bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-slate-100">
             <h2 className="text-base font-bold text-slate-900 mb-4">
               Kvitton{" "}
               <span className="font-normal text-slate-400 text-sm">
@@ -322,8 +332,8 @@ export default async function ShareReportPage({
                   className="border border-slate-100 rounded-xl overflow-hidden"
                 >
                   <div className="flex items-center justify-between px-4 py-3 bg-slate-50">
-                    <div>
-                      <p className="text-sm font-medium text-slate-800">
+                    <div className="min-w-0 mr-3">
+                      <p className="text-sm font-medium text-slate-800 truncate">
                         {receipt.description ?? `Kvitto ${index + 1}`}
                       </p>
                       {receipt.date && (
@@ -333,7 +343,7 @@ export default async function ShareReportPage({
                       )}
                     </div>
                     {receipt.amount != null && (
-                      <p className="text-sm font-bold text-slate-900">
+                      <p className="text-sm font-bold text-slate-900 whitespace-nowrap flex-shrink-0">
                         {formatCost(receipt.amount)}
                       </p>
                     )}
@@ -345,6 +355,7 @@ export default async function ShareReportPage({
                         alt={receipt.description ?? "Kvitto"}
                         fill
                         className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 768px"
                       />
                     </div>
                   )}
@@ -355,12 +366,12 @@ export default async function ShareReportPage({
         )}
 
         {/* Generated timestamp */}
-        <p className="text-center text-xs text-slate-400">
+        <p className="text-center text-xs text-slate-400 mb-16">
           Genererad {formatDate(generated_at)} via Autivo
         </p>
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-8 text-white text-center">
+        <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 md:p-8 text-white text-center">
           <h3
             className="text-xl font-bold mb-2"
             style={{ fontFamily: "var(--font-display)" }}
@@ -370,17 +381,29 @@ export default async function ShareReportPage({
           <p className="text-white/80 text-sm mb-6">
             Ladda ner Autivo och börja bygga din fordonshistorik idag
           </p>
-          <a
-            href="https://play.google.com/store/apps/details?id=se.autivo.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
-          >
-            Ladda ner på Google Play
-          </a>
+
+          {/* Buttons — stacked on mobile, side by side on sm+ */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="https://play.google.com/store/apps/details?id=se.autivo.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              Ladda ner på Google Play
+            </a>
+            <a
+              //href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-white/20 text-white border border-white/30 font-semibold px-6 py-3 rounded-xl hover:bg-white/30 transition-all duration-300"
+            >
+              App Store — Kommer snart
+            </a>
+          </div>
         </div>
 
-        <div className="pb-4" />
+        <div className="pt-8" />
       </div>
     </main>
   );
@@ -394,7 +417,7 @@ function Stat({ label, value }: { label: string; value: string }) {
       <p className="text-white/60 text-xs uppercase tracking-wider mb-1">
         {label}
       </p>
-      <p className="text-2xl font-bold">{value}</p>
+      <p className="text-xl md:text-2xl font-bold">{value}</p>
     </div>
   );
 }
@@ -403,7 +426,9 @@ function DetailItem({ label, value }: { label: string; value: string }) {
   return (
     <div>
       <p className="text-xs text-slate-400 mb-0.5">{label}</p>
-      <p className="text-sm font-semibold text-slate-800">{value}</p>
+      <p className="text-sm font-semibold text-slate-800 break-words">
+        {value}
+      </p>
     </div>
   );
 }
