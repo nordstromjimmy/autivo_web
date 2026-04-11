@@ -113,6 +113,16 @@ function formatMileage(mileage?: number): string {
   return `${mileage.toLocaleString("sv-SE")} km`;
 }
 
+function formatRecordType(type: string): string {
+  const types: Record<string, string> = {
+    service: "Service",
+    parts: "Reservdel",
+    besiktning: "Besiktning",
+    other: "Annat",
+  };
+  return types[type] ?? type;
+}
+
 // ==================== PAGE ====================
 
 export default async function ShareReportPage({
@@ -273,7 +283,7 @@ export default async function ShareReportPage({
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-0.5">
                       <span className="text-xs font-medium text-blue-600 bg-blue-50 rounded-full px-2 py-0.5 whitespace-nowrap">
-                        {record.type}
+                        {formatRecordType(record.type)}
                       </span>
                       {record.location && (
                         <span className="text-xs text-slate-400 truncate">
@@ -325,48 +335,53 @@ export default async function ShareReportPage({
               </span>
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-3">
               {receipts.map((receipt, index) => (
                 <div
                   key={index}
-                  className="border border-slate-100 rounded-xl overflow-hidden"
+                  className="flex items-center justify-between px-4 py-3 bg-slate-50 rounded-xl"
                 >
-                  <div className="flex items-center justify-between px-4 py-3 bg-slate-50">
-                    <div className="min-w-0 mr-3">
-                      <p className="text-sm font-medium text-slate-800 truncate">
-                        {receipt.description ?? `Kvitto ${index + 1}`}
-                      </p>
-                      {receipt.date && (
-                        <p className="text-xs text-slate-400">
-                          {formatDate(receipt.date)}
-                        </p>
-                      )}
-                    </div>
-                    {receipt.amount != null && (
-                      <p className="text-sm font-bold text-slate-900 whitespace-nowrap flex-shrink-0">
-                        {formatCost(receipt.amount)}
+                  <div className="min-w-0 mr-3">
+                    <p className="text-sm font-medium text-slate-800 truncate">
+                      {receipt.description ?? `Kvitto ${index + 1}`}
+                    </p>
+                    {receipt.date && (
+                      <p className="text-xs text-slate-400">
+                        {formatDate(receipt.date)}
                       </p>
                     )}
                   </div>
-                  {receipt.image_url && (
-                    <div className="relative w-full aspect-[4/3] bg-slate-100">
-                      <Image
-                        src={receipt.image_url}
-                        alt={receipt.description ?? "Kvitto"}
-                        fill
-                        className="object-contain"
-                        sizes="(max-width: 768px) 100vw, 768px"
-                      />
-                    </div>
+                  {receipt.amount != null && (
+                    <p className="text-sm font-bold text-slate-900 whitespace-nowrap flex-shrink-0">
+                      {formatCost(receipt.amount)}
+                    </p>
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Contact note */}
+            <div className="mt-4 flex items-center gap-2 text-slate-400">
+              <svg
+                className="w-4 h-4 flex-shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M16.5 6.75A4.5 4.5 0 1112 2.25a4.5 4.5 0 014.5 4.5zM18.75 19.5a6.75 6.75 0 00-13.5 0"
+                />
+              </svg>
+              <p className="text-xs">Kontakta säljaren för att se kvitton</p>
             </div>
           </div>
         )}
 
         {/* Generated timestamp */}
-        <p className="text-center text-xs text-slate-400 mb-16">
+        <p className="text-center text-xs text-slate-400 mb-16 mt-4">
           Genererad {formatDate(generated_at)} via Autivo
         </p>
 
