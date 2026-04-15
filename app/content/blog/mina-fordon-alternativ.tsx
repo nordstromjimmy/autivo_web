@@ -206,7 +206,7 @@ export default function MinaFordonContent() {
             <p className="text-blue-800 leading-relaxed">
               Autivo lanseras Q2 2026 och erbjuder flera funktioner som att
               spara servicekvitton, få påminnelser och ha en digital servicebok
-              - plus mycket mer. Gå med i väntelistan för tidig tillgång!
+              - plus mycket mer.
             </p>
           </div>
         </div>

@@ -243,14 +243,13 @@ export default async function BlogPost({
               Börja dokumentera din bils historia idag
             </h3>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
-              Autivo lanseras snart. Gå med i väntelistan så får du veta när
-              appen är redo!
+              Prenumerera för nyheter
             </p>
             <Link
               href="/#waitlist"
               className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
-              Gå med i väntelistan
+              Prenumerera
             </Link>
           </div>
         </div>

@@ -71,7 +71,7 @@ export default function CTA() {
         </h2>
 
         <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-2xl mx-auto">
-          Gå med i väntelistan och få tidig tillgång när vi lanserar.
+          Prenumerera för nyheter
         </p>
 
         {/* Email form */}
@@ -115,7 +115,7 @@ export default function CTA() {
                   Laddar...
                 </span>
               ) : (
-                "Gå med i väntelistan"
+                "Prenumerera"
               )}
             </button>
           </div>

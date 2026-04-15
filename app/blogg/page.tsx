@@ -175,13 +175,13 @@ export default async function BlogPage() {
             Vill du veta när Autivo lanseras?
           </h2>
           <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            Gå med i väntelistan och bli en av de första att använda Autivo
+            Prenumerera för nyheter
           </p>
           <Link
             href="/#waitlist"
             className="inline-block px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
-            Gå med i väntelistan
+            Prenumerera
           </Link>
         </div>
       </section>

@@ -178,7 +178,7 @@ export default function AboutPage() {
               href="/#waitlist"
               className="px-8 py-4 bg-white border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
             >
-              Gå med i väntelistan
+              Prenumerera
             </Link>
           </div>
         </div>

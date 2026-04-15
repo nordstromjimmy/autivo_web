@@ -82,14 +82,14 @@ export default function Footer() {
                     href="#waitlist"
                     className="hover:text-white transition-colors"
                   >
-                    Väntelista
+                    Nyhetsbrev
                   </a>
                 ) : (
                   <Link
                     href="/#waitlist"
                     className="hover:text-white transition-colors"
                   >
-                    Väntelista
+                    Nyhetsbrev
                   </Link>
                 )}
               </li>
