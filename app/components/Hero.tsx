@@ -259,7 +259,7 @@ export default function Hero() {
 
               {/* iOS - Coming Soon */}
               <a
-                href="https://apps.apple.com/sv/app/autivo/id6761551909"
+                href="https://apps.apple.com/se/app/autivo/id6761551909"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 group cursor-pointer"
