@@ -223,7 +223,7 @@ export default function Hero() {
               >
                 <div className="w-12 h-12 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center flex-shrink-0">
                   <svg
-                    className="w-7 h-7 text-[#A4C639]"
+                    className="w-7 h-7 text-[#FFFFFF]"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     aria-hidden="true"
