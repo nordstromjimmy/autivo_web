@@ -222,20 +222,26 @@ export default function Hero() {
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl hover:shadow-xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-12 h-12 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Image
-                    src="/weblogo4.png"
-                    alt="Autivo"
-                    width={40}
-                    height={40}
-                    className="w-11 h-11"
-                  />
+                  <svg
+                    className="w-7 h-7 text-[#A4C639]"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 8a.9.9 0 1 0 0-1.8A.9.9 0 0 0 7 8Zm10 0a.9.9 0 1 0 0-1.8A.9.9 0 0 0 17 8Z" />
+                    <path d="M8.2 5.3 6.8 3.6a.45.45 0 1 0-.7.55l1.4 1.8A6.8 6.8 0 0 1 12 4.5c1.6 0 3.1.5 4.4 1.4l1.4-1.8a.45.45 0 1 0-.7-.55l-1.4 1.7A7.4 7.4 0 0 0 12 4c-1.4 0-2.7.4-3.8 1.3Z" />
+                    <path d="M7 9h10a1 1 0 0 1 1 1v7a2 2 0 0 1-2 2v2.2a.8.8 0 1 1-1.6 0V19H9.6v2.2a.8.8 0 1 1-1.6 0V19a2 2 0 0 1-2-2v-7a1 1 0 0 1 1-1Z" />
+                    <path d="M4.2 9.7A1.2 1.2 0 0 0 3 10.9v4.2a1.2 1.2 0 1 0 2.4 0v-4.2a1.2 1.2 0 0 0-1.2-1.2Zm15.6 0a1.2 1.2 0 0 0-1.2 1.2v4.2a1.2 1.2 0 1 0 2.4 0v-4.2a1.2 1.2 0 0 0-1.2-1.2Z" />
+                  </svg>
                 </div>
+
                 <div className="flex-1 text-left">
                   <p className="font-bold text-lg">Ladda ner för Android</p>
                   <p className="text-sm text-white/90">
                     Tillgänglig nu på Google Play
                   </p>
                 </div>
+
                 <svg
                   className="w-6 h-6 text-white/80 group-hover:translate-x-1 transition-transform"
                   fill="none"
