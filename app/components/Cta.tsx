@@ -130,7 +130,7 @@ export default function CTA() {
                   clipRule="evenodd"
                 />
               </svg>
-              Tack! Vi hör av oss snart.
+              Tack! Du kommer nu få nyheter om Autivo.
             </div>
           )}
 
