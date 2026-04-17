@@ -411,9 +411,9 @@ export default async function ShareReportPage({
               href="https://apps.apple.com/sv/app/autivo/id6761551909"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white/20 text-white border border-white/30 font-semibold px-6 py-3 rounded-xl hover:bg-white/30 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
-              App Store — Kommer snart
+              Ladda ner på App Store
             </a>
           </div>
         </div>
