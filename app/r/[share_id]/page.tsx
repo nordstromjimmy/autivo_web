@@ -408,7 +408,7 @@ export default async function ShareReportPage({
               Ladda ner på Google Play
             </a>
             <a
-              href="https://apps.apple.com/sv/app/autivo/id6761551909"
+              href="https://apps.apple.com/se/app/autivo/id6761551909"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
